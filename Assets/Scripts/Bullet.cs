@@ -4,8 +4,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     protected BulletPattern pattern;
-    protected Vector3 direction;
-    protected float speed;
+    public Vector3 Direction;
+    public float Speed;
     protected float lifeTime;
     protected float timer;
 
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     {
         pattern = pPattern;
         pPattern.Direction = pDirection;
-        speed = pattern.Speed;
+        Speed = pattern.Speed;
         lifeTime = pLifeTime;
     }
 

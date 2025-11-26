@@ -1,10 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossPaterns : MonoBehaviour
 {
-    [SerializeField] protected Bullet bulletObject;
+    public static List<BulletJob> bulletList = new List<BulletJob>();
+
+    [SerializeField] protected BulletJob bulletObject;
 
     [Header("circle paterns")]
     [SerializeField] protected int p1NBulletPerCircles = 100;
@@ -37,10 +40,11 @@ public class BossPaterns : MonoBehaviour
         for (int i = 0; i < p1NBulletPerCircles; i++)
         {
             ratio = (float)i / (float)p1NBulletPerCircles;
-            Bullet bullet = Instantiate(bulletObject);
+            BulletJob bullet = Instantiate(bulletObject);
             BulletPattern pattern = bullet.AddComponent<BulletPattern>();
             bullet.transform.position = transform.position;
             bullet.Setup(pattern, Quaternion.AngleAxis(360 * ratio + pAngle, Vector3.up) * Vector3.forward, p1BulletLifeTime);
+            bulletList.Add(bullet);
         }
     }
 }
