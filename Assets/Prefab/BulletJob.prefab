@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1033454570807117881}
   - component: {fileID: 1978432814016763776}
   - component: {fileID: 3075324272524533527}
-  - component: {fileID: 7876380847963853464}
   m_Layer: 0
   m_Name: BulletJob
   m_TagString: Untagged
@@ -49,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0}
   Speed: 0
+  LifeTime: 0
+  Timer: 0
 --- !u!33 &1978432814016763776
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -102,24 +103,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7876380847963853464
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166159362375179395}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

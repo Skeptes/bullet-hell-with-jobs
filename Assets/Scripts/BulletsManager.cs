@@ -19,9 +19,9 @@ public class BulletsManager : MonoBehaviour
 
     void Update()
     {
-        BulletsPositions = new NativeArray<float3>(BossPaterns.bulletList.Count, Allocator.Persistent);
-        Directions = new NativeArray<float3>(BossPaterns.bulletList.Count, Allocator.Persistent);
-        Speeds = new NativeArray<float>(BossPaterns.bulletList.Count, Allocator.Persistent);
+        BulletsPositions = new NativeArray<float3>(BossPaterns.bulletList.Count, Allocator.TempJob);
+        Directions = new NativeArray<float3>(BossPaterns.bulletList.Count, Allocator.TempJob);
+        Speeds = new NativeArray<float>(BossPaterns.bulletList.Count, Allocator.TempJob);
 
         for (int i = 0; i < BulletsPositions.Length; i++)
         {
@@ -50,9 +50,6 @@ public class BulletsManager : MonoBehaviour
 
             //if (i == 0) print(BulletsPositions[i]);
         }
-
-        BulletsPositions.Dispose();
-        Directions.Dispose();
-        Speeds.Dispose();
     }
+
 }
